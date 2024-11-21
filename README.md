@@ -88,7 +88,7 @@ def train_val_datasets(data):
 
 # Create the datasets
 train_dataset, validation_dataset = train_val_datasets(data)
-print('Name:Joyce Beulah R       Register Number: 212222230058')
+print('Name:V NAVEENKUMAR       Register Number: 212221230068')
 print(f"There are {train_dataset.cardinality()} sentence-label pairs for training.\n")
 print(f"There are {validation_dataset.cardinality()} sentence-label pairs for validation.\n")
 
@@ -132,7 +132,7 @@ def fit_vectorizer(train_sentences, standardize_func):
 text_only_dataset = train_dataset.map(lambda text, label: text)
 vectorizer = fit_vectorizer(text_only_dataset, standardize_func)
 vocab_size = vectorizer.vocabulary_size()
-print('Name:Joyce Beulah R       Register Number: 212222230058  ')
+print('Name:V NAVEENKUMAR       Register Number: 212221230068  ')
 print(f"Vocabulary contains {vocab_size} words\n")
 def fit_label_encoder(train_labels, validation_labels):
   
@@ -153,7 +153,7 @@ train_labels_only = train_dataset.map(lambda text, label: label)
 validation_labels_only = validation_dataset.map(lambda text, label: label)
 
 label_encoder = fit_label_encoder(train_labels_only,validation_labels_only)
-print('Name: Joyce Beulah R     Register Number: 212222230058    ')
+print('Name: V NAVEENKUMAR     Register Number: 212221230068    ')
 print(f'Unique labels: {label_encoder.get_vocabulary()}')
 
 def preprocess_dataset(dataset, vectorizer, label_encoder, batch_size=32):
@@ -173,7 +173,7 @@ validation_proc_dataset = preprocess_dataset(validation_dataset, vectorizer, lab
 
 train_batch = next(train_proc_dataset.as_numpy_iterator())
 validation_batch = next(validation_proc_dataset.as_numpy_iterator())
-print('Name: Joyce Beulah R     Register Number: 212222230058      ')
+print('Name: V NAVEENKUMAR     Register Number: 212221230068      ')
 print(f"Shape of the train batch: {train_batch[0].shape}")
 print(f"Shape of the validation batch: {validation_batch[0].shape}")
 
@@ -209,7 +209,7 @@ else:
 	predictions = model.predict(example_batch, verbose=False)
 	print(f"predictions have shape: {predictions.shape}")
 
-history = model.fit(train_proc_dataset, epochs=30, validation_data=validation_proc_dataset)
+history = model.fit(train_proc_dataset, epochs=10, validation_data=validation_proc_dataset)
 
 def plot_graphs(history, metric):
     plt.plot(history.history[metric])
@@ -218,14 +218,15 @@ def plot_graphs(history, metric):
     plt.ylabel(metric)
     plt.legend([metric, f'val_{metric}'])
     plt.show()
-print('Name: VARSHA AJITH   Register Number: 212221230118 ')
+print('Name: V NAVEENKUMAR   Register Number: 212221230068 ')
 plot_graphs(history, "accuracy")
 plot_graphs(history, "loss")
 ```
 
 ## OUTPUT
 ### Loss, Accuracy Vs Iteration Plot
-![image](https://github.com/user-attachments/assets/0b064fe2-df27-46ff-af8b-2db1eee50a61)
+![EDITING](https://github.com/user-attachments/assets/951cdb82-c2f8-4ec2-bb57-3e8ffc78e721)
+
 ![image](https://github.com/user-attachments/assets/7c4d95b6-5350-42c4-bcf7-c0ed366c4c0f)
 
 
